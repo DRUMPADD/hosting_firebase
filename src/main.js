@@ -2,21 +2,49 @@ const db = firebase.firestore();
 
 
 const formulario = document.getElementById("contacto");
-
+// const d = db.collection("usuarios").where("correo", '==', "erickfco1999@gmail.com").get()
+// .then(snapshot => {
+//     console.log(snapshot.empty);
+//     snapshot.forEach(doc => {
+//         // Do something
+//         console.log(doc.id);
+//     });
+// })
 const usuarios = async(datos) => {
-    let usuario_ = await db.collection("usuarios").add({
-        nombre: datos.nombre,
-        apellido: datos.apellido,
-        correo: datos.correo,
-    })
-    const id_ = usuario_.id;
-
-    await db.collection("mensajes").add({
-        id_usuario: id_,
-        mensaje: datos.mensaje
+    var existe = false, id_usuario = "";
+    await db.collection("usuarios").where("correo", '==', datos.correo).get()
+    .then(snapshot => {
+        snapshot.forEach(doc => {
+            id_usuario = doc.id;
+            existe = doc.exists;
+        });
     })
 
-    alert("Mensaje enviado");
+    if(existe === true) {
+        await db.collection("mensajes").add({
+            correo: datos.correo,
+            mensaje: datos.mensaje,
+            id_usuario: id_usuario
+        })
+        id_usuario = "";
+        alert("Mensaje enviado");
+    } else {
+        let usuario_ = await db.collection("usuarios").add({
+            nombre: datos.nombre,
+            apellido: datos.apellido,
+            correo: datos.correo,
+        })
+        const id_ = usuario_.id;
+
+        await db.collection("mensajes").add({
+            usuario: datos.correo,
+            mensaje: datos.mensaje,
+            id_usuario: id_
+        })
+        existe = false;
+        alert("Mensaje enviado");
+    }
+
 }
 
 
