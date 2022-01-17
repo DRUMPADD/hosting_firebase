@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EVA Project Advisory & Scheduling</title>
+    <title>EVA Project Advisory & Scheduling - Inicio</title>
     <link rel="shortcut icon" href="./img/logo/Color logo.ico">
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="./form.css">
@@ -16,10 +16,13 @@
                 <img src="./img/logo/png/Color logo - no background.png" class="logo" alt="">
                 <ul class="menu-links">
                     <li class="nav-li">
-                        <a href="#" class="link">¿Quiénes somos?</a>
+                        <a href="./pagina.html" class="link">¿Quiénes somos?</a>
                     </li>
                     <li class="nav-li">
                         <a href="#" class="link">Simulación</a>
+                    </li>
+                    <li class="nav-li">
+                        <a href="./ejemplo.html" class="link ejemplo-link"><span>Ejemplo</span> <i class="far fa-file-pdf icono-pdf"></i></a>
                     </li>
                     <li class="nav-li">
                         <a href="#formulario" class="link contacto">Contacto</a>
@@ -145,32 +148,7 @@
         </div>
     </div>
     <script src="https://kit.fontawesome.com/5622d734cd.js" crossorigin="anonymous"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script>
-        const hamburger = document.querySelector(".hamburger");
-        const navMenu = document.querySelector(".menu-links");
-
-        hamburger.addEventListener("click", mobileMenu);
-
-        function mobileMenu() {
-            hamburger.classList.toggle("active");
-            navMenu.classList.toggle("active");
-        }
-
-        const firebaseConfig = {
-        apiKey: "AIzaSyBdq345bOAgU4ZsMM2lszHMTK6o93sKKAM",
-        authDomain: "fir-demo-a94bb.firebaseapp.com",
-        projectId: "fir-demo-a94bb",
-        storageBucket: "fir-demo-a94bb.appspot.com",
-        messagingSenderId: "421520673795",
-        appId: "1:421520673795:web:fa06294b23b1cd56fb9236",
-        measurementId: "G-GNTRGECJXP"
-        };
-
-        // Initialize Firebase
-        const app = firebase.initializeApp(firebaseConfig);
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./main.js"></script>
 </body>
 </html>
