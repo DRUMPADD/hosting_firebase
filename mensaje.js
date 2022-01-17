@@ -9,11 +9,9 @@ form.addEventListener('submit', (e) => {
 
     if(correo !== null && mensaje !== null) {
         Email.send({
-            Host: "smtp.gmail.com",
-            Username : "erickfco1999",
-            Password : "Sistemas99",
+            SecureToken: "69158f15-b75d-4d0e-ac6c-19b95d12f0db",
             To : "erickfco1999@gmail.com",
-            From : correo,
+            From : "erickfco1999@gmail.com",
             Subject : "Comentario",
             Body : mensaje,
         }).then(
