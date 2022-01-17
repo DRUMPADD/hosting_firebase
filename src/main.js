@@ -1,6 +1,3 @@
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".menu-links");
-
 const db = firebase.firestore();
 
 
