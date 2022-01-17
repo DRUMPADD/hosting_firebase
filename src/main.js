@@ -1,3 +1,26 @@
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".menu-links");
+
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
+
+const firebaseConfig = {
+apiKey: "AIzaSyBdq345bOAgU4ZsMM2lszHMTK6o93sKKAM",
+authDomain: "fir-demo-a94bb.firebaseapp.com",
+projectId: "fir-demo-a94bb",
+storageBucket: "fir-demo-a94bb.appspot.com",
+messagingSenderId: "421520673795",
+appId: "1:421520673795:web:fa06294b23b1cd56fb9236",
+measurementId: "G-GNTRGECJXP"
+};
+
+// Initialize Firebase
+const app = firebase.initializeApp(firebaseConfig);
+
 const db = firebase.firestore();
 
 

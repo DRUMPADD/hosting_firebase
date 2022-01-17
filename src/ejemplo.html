@@ -17,7 +17,7 @@
                 <img src="./img/logo/png/Color logo - no background.png" class="logo" alt="">
                 <ul class="menu-links">
                     <li class="nav-li">
-                        <a href="./pagina.html" class="link">¿Quiénes somos?</a>
+                        <a href="./index.html" class="link">¿Quiénes somos?</a>
                     </li>
                     <li class="nav-li">
                         <a href="./simulacion.html" class="link">Simulación</a>
@@ -62,6 +62,45 @@
             <p>Website by Duotech Software</p>
         </section>
     </footer>
+
+    <div id="formulario" class="modal-form">
+        <div class="modal-contenido">
+            <div class="modal-cierra">
+                <a href="#" class="cierra">X</a>
+            </div>
+            <div>
+                <div class="img-cont">
+                    <img src="./img/ciclo-prog.png" class="logo-form" alt="Imagen">
+                </div>
+                <form class="form-cont" id="contacto">
+                    <p>Proporciona tus datos</p>
+                    <div class="form-inputs">
+                        <div>
+                            <label for="">Nombre(s)*</label>
+                            <input type="text" class="entrada" name="nombres">
+                        </div>
+                        <div>
+                            <label for="">Apellidos*</label>
+                            <input type="text" class="entrada" name="apellidos">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="">Correo*</label>
+                        <input type="text" class="entrada correo" name="correo">
+                    </div>
+                    <div>
+                        <label for="">Mensaje</label>
+                        <textarea name="mensaje" id="mensaje" class="entrada mensaje" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="input-boton">
+                        <input type="submit" class="boton" value="Enviar mensaje">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://kit.fontawesome.com/5622d734cd.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./main.js"></script>
