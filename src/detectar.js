@@ -1,11 +1,11 @@
 const detectar = detect.parse(navigator.userAgent);
 const boton = document.querySelector(".ejemplo-link");
 
-console.log(detectar.device.family);
-
 if(detectar.device !== null) {
-    if(detectar.device.family !== 'iPhone') {
-        boton.setAttribute("href", './pdf/Ejemplo-Reporte-semanal.pdf');
+    if(detectar.device.family !== 'iPhone' && detectar.device.type !== 'Desktop') {
         alert("Eres android");
+        boton.removeAttribute("href");
+        boton.setAttribute("href", 'https://fir-demo-a94bb.web.app/pdf');
+        boton.setAttribute("download", 'Ejemplo-Reporte-semanal.pdf');
     }
 }
