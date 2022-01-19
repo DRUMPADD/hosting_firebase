@@ -6,5 +6,6 @@ console.log(detectar.device.family);
 if(detectar.device !== null) {
     if(detectar.device.family === 'Android') {
         boton.setAttribute("href", './pdf/Ejemplo-Reporte-semanal.pdf');
+        alert("Eres android");
     }
 }
