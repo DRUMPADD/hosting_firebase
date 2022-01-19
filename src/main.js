@@ -1,5 +1,5 @@
 const db = firebase.firestore();
-
+const boton = document.querySelector(".ejemplo-link");
 
 const formulario = document.getElementById("contacto");
 // const d = db.collection("usuarios").where("correo", '==', "erickfco1999@gmail.com").get()
@@ -10,6 +10,14 @@ const formulario = document.getElementById("contacto");
 //         console.log(doc.id);
 //     });
 // })
+
+if( !/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera|Chrome|Brave Mini/i.test(navigator.userAgent) ) {
+} else {
+    boton.removeAttribute("href");
+    boton.setAttribute("href", 'http://127.0.0.1:5500/pdf');
+    boton.setAttribute("download", 'Ejemplo-Reporte-semanal.pdf');
+}
+
 const usuarios = async(datos) => {
     var existe = false, id_usuario = "";
     await db.collection("usuarios").where("correo", '==', datos.correo).get()
